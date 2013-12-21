@@ -7,9 +7,9 @@
  * @copyright  2013 Filip Sosnowski
  */
 
-if( ! isset( $_REQUEST['module'] ) )
+if( ! isset( $_REQUEST[ 'module' ] ) )
 {
-	$_RESET['app']	= 'rp';
+	$_RESET['app']		= 'game';
 	$_RESET['module']	= 'tickets';
 	$_RESET['section']	= 'list';
 }
