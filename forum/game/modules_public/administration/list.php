@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Role Play Application
+ * GUN Application
  *
  * @author     Filip Sosnowski <filipsosnowski38@interia.eu>
  * @copyright  2013 Filip Sosnowski
