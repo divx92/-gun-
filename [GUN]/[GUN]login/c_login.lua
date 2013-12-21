@@ -21,7 +21,9 @@
 						local toCam_x, toCam_y, toCam_z, toCam_x1, toCam_y1, toCam_z1 = unpack (cam[table_pos])
 						local x, y, z = interpolateBetween ( cCam_x, cCam_y, cCam_z,
 						toCam_x, toCam_y, toCam_z, progress, "Linear")
-						setCameraMatrix(x, y, z, 0, 0, 0, 0, 0)
+						local x1, y1, z1 = interpolateBetween ( cCam_x1, cCam_y1, cCam_z1,
+						toCam_x1, toCam_y1, toCam_z1, progress, "Linear")
+						setCameraMatrix(x, y, z, x1,y2,z1)
 						if now >= anim.endTime then
 							if table_pos < #cam then
 								cCam_x, cCam_y, cCam_z = getCameraMatrix (getLocalPlayer())
