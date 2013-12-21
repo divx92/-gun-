@@ -16,7 +16,7 @@
 	
 	function mysql_getuid(login)
 		if type(login) == "string" then
-			local player = dbQuery(mySQL, "SELECT email FROM forum_members WHERE members_l_username = '"..login.."' ")
+			local player = dbQuery(mySQL, "SELECT * FROM forum_members WHERE members_l_username = "..user..")
 			local result, num_affected_rows, last_insert_id = dbPoll(player, -1)
 			for k, v in pairs(result) do
 				for k,ID in pairs(v) do
@@ -41,7 +41,7 @@
 		login = "patr0"
 		password = "ecdca4dee412d925915919067abd369b"
 		if mySQL then
-			player = dbQuery( mySQL, "SELECT email FROM forum_members WHERE members_l_username = '"..login.."' AND members_pass_hash = '"..tostring(password).."' ")
+			player = dbQuery( mySQL, "SELECT * FROM forum_members WHERE members_l_username = "..user.." AND members_pass_hash= MD5(CONCAT(MD5(members_pass_salt),'', MD5("..pass..")))")
 			
 			local bool, ID = mysql_getuid(login)
 			if ID then
