@@ -17,8 +17,8 @@ class public_rp_tickets_list extends ipsCommand
 		
 		$tickets = $tickets->fetchTickets( $this->memberData['member_id'] );
 		
-		$this->registry->output->setTitle( 'ZgĹ‚oszenia' );
-		$this->registry->output->addNavigation( 'ZgĹ‚oszenia', 'app=rp&module=tickets' );
+		$this->registry->output->setTitle( 'Zgłoszenia' );
+		$this->registry->output->addNavigation( 'Zgłoszenia', 'app=rp&module=tickets' );
 		$this->registry->output->addContent( $this->registry->output->getTemplate( 'rp' )->tickets_list( $tickets ) );
 		$this->registry->output->sendOutput();
 	}
