@@ -7,11 +7,11 @@
  * @copyright  2013 Filip Sosnowski
  */
  
-class public_rp_administration_list extends ipsCommand
+class public_game_administration_list extends ipsCommand
 {
 	public function doExecute( ipsRegistry $registry )
 	{
-		require_once( IPSLib::getAppDir( 'rp' ) . '/sources/administration.php' );
+		require_once( IPSLib::getAppDir( 'game' ) . '/sources/administration.php' );
 		$this->registry->setClass( 'administration', new administration( $registry ) );
 		$administration = $this->registry->getClass( 'administration' );
 		
@@ -38,7 +38,7 @@ class public_rp_administration_list extends ipsCommand
 		
 		$this->registry->output->setTitle( 'Administracja' );
 		$this->registry->output->addNavigation( 'Administracja', 'app=rp&module=administration' );
-		$this->registry->output->addContent( $this->registry->output->getTemplate( 'rp' )->administration_list( $groups, $members ) );
+		$this->registry->output->addContent( $this->registry->output->getTemplate( 'game' )->administration_list( $groups, $members ) );
 		$this->registry->output->sendOutput();
 	}
 }
