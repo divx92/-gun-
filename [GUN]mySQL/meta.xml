@@ -1,0 +1,4 @@
+<meta>
+	<script src="c_mysql.lua" type="client" />
+	<script src="s_mysql.lua" type="server" />
+</meta>
