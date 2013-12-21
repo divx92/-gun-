@@ -7,11 +7,11 @@
  * @copyright  2013 Filip Sosnowski
  */
 
-class public_rp_tickets_create extends ipsCommand
+class public_game_tickets_create extends ipsCommand
 {
 	public function doExecute( ipsRegistry $registry )
 	{
-		require_once( IPSLib::getAppDir( 'rp' ) . '/sources/tickets.php' );
+		require_once( IPSLib::getAppDir( 'game' ) . '/sources/tickets.php' );
 		$this->registry->setClass( 'tickets', new tickets( $registry ) );
 		$tickets = $this->registry->getClass( 'tickets' );
 		
@@ -42,7 +42,7 @@ class public_rp_tickets_create extends ipsCommand
 		$this->registry->output->setTitle( 'Zgłoszenia' );
 		$this->registry->output->addNavigation( 'Zgłoszenia', 'app=rp&module=tickets' );
 		$this->registry->output->addNavigation( 'Tworzenie nowego zgłoszenia', 'app=rp&module=tickets&section=create' );
-		$this->registry->output->addContent( $this->registry->output->getTemplate( 'rp' )->tickets_create( $category, $priority, $html ) );
+		$this->registry->output->addContent( $this->registry->output->getTemplate( 'game' )->tickets_create( $category, $priority, $html ) );
 		$this->registry->output->sendOutput();
 	}
 }
