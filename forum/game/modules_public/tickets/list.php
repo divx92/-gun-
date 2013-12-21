@@ -1,6 +1,6 @@
 <?php
 
-/**
+/***
  * GUN Application
  *
  * @author     Filip Sosnowski <filipsosnowski38@interia.eu>
